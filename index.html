@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<body id="body">
+    <section>
+        <h1>Body Font Size</h1>
+        <p id="body-font-size"></p>
+    </section>
+</body>
+
+<script>
+    var bodyFontSize = document.getElementById("body-font-size");
+    bodyFontSize.innerText = window.getComputedStyle(document.getElementById("body")).fontSize;
+</script>
+
+</html>
