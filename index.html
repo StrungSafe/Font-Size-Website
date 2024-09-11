@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
 
-<body id="body">
-    <section>
-        <h1>Body Font Size</h1>
-        <p id="body-font-size"></p>
+<body class="main">
+    <section class="container">
+        <h1>What Are My Default Fonts?</h1>
+        <br />
+        <h2>HTML Font Size</h2>
+        <p id="html-font-size"></p>
     </section>
 </body>
 
+<style>
+    .main {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        width: 100dvw;
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    .container {
+        margin-top: 10%;
+    }
+</style>
+
 <script>
-    var bodyFontSize = document.getElementById("body-font-size");
-    bodyFontSize.innerText = window.getComputedStyle(document.getElementById("body")).fontSize;
+    function updateFontSize() {
+        var bodyFontSize = document.getElementById("html-font-size");
+        var baseElement = document.getElementsByTagName("html");
+        bodyFontSize.innerText = window.getComputedStyle(baseElement[0]).fontSize;
+    }
+
+    updateFontSize();
+
+    setInterval(updateFontSize, 1000);
 </script>
 
 </html>
